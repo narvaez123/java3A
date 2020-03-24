@@ -1,3 +1,0 @@
-conigurar credenciales 
-
-$ git congig --global user.name "sebas"
