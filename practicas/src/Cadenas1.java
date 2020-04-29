@@ -432,6 +432,7 @@ public class Cadenas1 extends javax.swing.JFrame {
         num =Integer.parseInt(txtnumero.getText());
         char buscar= name.charAt(num-1);
         lblletra.setText(""+buscar);
+        
         if (Character.isLowerCase(buscar)){
             btnMayus.setEnabled(true);
             btnMin.setEnabled(false);
