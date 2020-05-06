@@ -81,6 +81,7 @@ public class number extends javax.swing.JFrame {
         btnConfigParams = new javax.swing.JButton();
         btnAbout = new javax.swing.JButton();
         btnTry = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Number race");
@@ -90,20 +91,21 @@ public class number extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 255));
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Number race");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(340, 20, 250, 30);
+        jLabel1.setBounds(60, 0, 320, 60);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/car64px.png"))); // NOI18N
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 0, 80, 70);
 
-        pnlZonePlay.setBackground(new java.awt.Color(204, 204, 204));
-        pnlZonePlay.setBorder(javax.swing.BorderFactory.createTitledBorder("Play zone"));
+        pnlZonePlay.setBackground(new java.awt.Color(6, 23, 190));
+        pnlZonePlay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        pnlZonePlay.setOpaque(false);
         pnlZonePlay.setLayout(null);
 
         lblD2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
@@ -118,6 +120,9 @@ public class number extends javax.swing.JFrame {
         pnlZonePlay.add(lblD1);
         lblD1.setBounds(60, 70, 70, 70);
 
+        btnplay.setBackground(new java.awt.Color(164, 10, 198));
+        btnplay.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnplay.setForeground(new java.awt.Color(204, 204, 204));
         btnplay.setText("play  -  player ");
         btnplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,13 +130,17 @@ public class number extends javax.swing.JFrame {
             }
         });
         pnlZonePlay.add(btnplay);
-        btnplay.setBounds(60, 180, 190, 40);
+        btnplay.setBounds(70, 170, 190, 40);
 
         jPanel1.add(pnlZonePlay);
-        pnlZonePlay.setBounds(320, 250, 310, 240);
+        pnlZonePlay.setBounds(310, 220, 320, 260);
 
-        pnlConfigZone.setBorder(javax.swing.BorderFactory.createTitledBorder("config zone"));
+        pnlConfigZone.setBackground(new java.awt.Color(255, 255, 255));
+        pnlConfigZone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        pnlConfigZone.setOpaque(false);
 
+        cbxLeven.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cbxLeven.setForeground(new java.awt.Color(204, 204, 204));
         cbxLeven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> Basic = 50", "-> Intermdiate = 100", "-> Advanced = 200" }));
         cbxLeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +148,9 @@ public class number extends javax.swing.JFrame {
             }
         });
 
+        btnStart.setBackground(new java.awt.Color(164, 10, 198));
+        btnStart.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnStart.setForeground(new java.awt.Color(204, 204, 204));
         btnStart.setText("Start gamer");
         btnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,10 +158,18 @@ public class number extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Number of players");
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Level");
 
+        cbxNumP.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        cbxNumP.setForeground(new java.awt.Color(204, 204, 204));
         cbxNumP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> 1", "-> 2", "-> 3" }));
         cbxNumP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,13 +183,14 @@ public class number extends javax.swing.JFrame {
             pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlConfigZoneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbxLeven, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(cbxNumP, 0, 184, Short.MAX_VALUE)
-                    .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(cbxLeven, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel4)
+                        .addComponent(cbxNumP, 0, 184, Short.MAX_VALUE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         pnlConfigZoneLayout.setVerticalGroup(
             pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,30 +203,48 @@ public class number extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxLeven, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel1.add(pnlConfigZone);
-        pnlConfigZone.setBounds(30, 80, 210, 220);
+        pnlConfigZone.setBounds(700, 60, 220, 220);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Scores zone"));
+        jPanel4.setBackground(new java.awt.Color(6, 23, 190));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jPanel4.setOpaque(false);
 
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("turn player:");
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("advance positions:");
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Missing positions ");
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Returns");
 
+        lbl4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lbl4.setForeground(new java.awt.Color(255, 255, 255));
         lbl4.setText("-");
 
+        lbl3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lbl3.setForeground(new java.awt.Color(255, 255, 255));
         lbl3.setText("-");
 
+        lbl2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lbl2.setForeground(new java.awt.Color(255, 255, 255));
         lbl2.setText("-");
 
+        lbl1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lbl1.setForeground(new java.awt.Color(255, 255, 255));
         lbl1.setText("-");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -219,7 +258,7 @@ public class number extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbl2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -246,16 +285,20 @@ public class number extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(lbl4))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(670, 80, 230, 220);
+        jPanel4.setBounds(20, 70, 230, 220);
 
-        pnlPairs.setBorder(javax.swing.BorderFactory.createTitledBorder("pairs"));
+        pnlPairs.setBackground(new java.awt.Color(6, 23, 190));
+        pnlPairs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         pnlPairs.setToolTipText("");
+        pnlPairs.setOpaque(false);
 
+        lblPares.setBackground(new java.awt.Color(0, 204, 204));
         lblPares.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        lblPares.setForeground(new java.awt.Color(204, 204, 204));
         lblPares.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPares.setText("0");
 
@@ -265,24 +308,27 @@ public class number extends javax.swing.JFrame {
             pnlPairsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPairsLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                 .addGap(23, 23, 23))
         );
         pnlPairsLayout.setVerticalGroup(
             pnlPairsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPairsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                 .addGap(26, 26, 26))
         );
 
         jPanel1.add(pnlPairs);
         pnlPairs.setBounds(40, 340, 160, 140);
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Winner"));
+        jPanel6.setBackground(new java.awt.Color(6, 23, 190));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         jPanel6.setToolTipText("");
+        jPanel6.setOpaque(false);
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("?");
 
@@ -293,27 +339,36 @@ public class number extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel6);
         jPanel6.setBounds(710, 320, 170, 150);
 
+        btnConfigParams.setBackground(new java.awt.Color(164, 10, 198));
+        btnConfigParams.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnConfigParams.setForeground(new java.awt.Color(204, 204, 204));
         btnConfigParams.setText("Config params");
         jPanel1.add(btnConfigParams);
         btnConfigParams.setBounds(360, 160, 210, 30);
 
+        btnAbout.setBackground(new java.awt.Color(164, 10, 198));
+        btnAbout.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnAbout.setForeground(new java.awt.Color(204, 204, 204));
         btnAbout.setText("About of");
         jPanel1.add(btnAbout);
         btnAbout.setBounds(360, 120, 210, 30);
 
+        btnTry.setBackground(new java.awt.Color(164, 10, 198));
+        btnTry.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnTry.setForeground(new java.awt.Color(204, 204, 204));
         btnTry.setText("Try Again");
         btnTry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -322,6 +377,14 @@ public class number extends javax.swing.JFrame {
         });
         jPanel1.add(btnTry);
         btnTry.setBounds(360, 80, 210, 30);
+
+        jLabel9.setBackground(new java.awt.Color(51, 51, 255));
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/l.jpg"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(0, 4, 950, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -435,7 +498,7 @@ public class number extends javax.swing.JFrame {
             lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
             break;
             case 6:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
+            lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png"))); 
             break;
             default:
 
@@ -623,6 +686,7 @@ public class number extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
