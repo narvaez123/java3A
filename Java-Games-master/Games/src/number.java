@@ -2,6 +2,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -77,7 +78,7 @@ public class number extends javax.swing.JFrame {
         pnlPairs = new javax.swing.JPanel();
         lblPares = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        lblGana = new javax.swing.JLabel();
         btnConfigParams = new javax.swing.JButton();
         btnAbout = new javax.swing.JButton();
         btnTry = new javax.swing.JButton();
@@ -133,7 +134,7 @@ public class number extends javax.swing.JFrame {
         btnplay.setBounds(70, 170, 190, 40);
 
         jPanel1.add(pnlZonePlay);
-        pnlZonePlay.setBounds(310, 220, 320, 260);
+        pnlZonePlay.setBounds(310, 260, 320, 260);
 
         pnlConfigZone.setBackground(new java.awt.Color(255, 255, 255));
         pnlConfigZone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -141,7 +142,7 @@ public class number extends javax.swing.JFrame {
 
         cbxLeven.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbxLeven.setForeground(new java.awt.Color(204, 204, 204));
-        cbxLeven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> Basic = 50", "-> Intermdiate = 100", "-> Advanced = 200" }));
+        cbxLeven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> Basic = 50 positions", "-> Intermdiate = 100 positions", "-> Advanced = 200 positions" }));
         cbxLeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxLevenActionPerformed(evt);
@@ -184,13 +185,13 @@ public class number extends javax.swing.JFrame {
             .addGroup(pnlConfigZoneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                    .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(cbxLeven, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addComponent(jLabel4)
-                        .addComponent(cbxNumP, 0, 184, Short.MAX_VALUE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addComponent(cbxNumP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlConfigZoneLayout.setVerticalGroup(
             pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,7 +210,7 @@ public class number extends javax.swing.JFrame {
         );
 
         jPanel1.add(pnlConfigZone);
-        pnlConfigZone.setBounds(700, 60, 220, 220);
+        pnlConfigZone.setBounds(690, 110, 220, 220);
 
         jPanel4.setBackground(new java.awt.Color(6, 23, 190));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -289,7 +290,7 @@ public class number extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(20, 70, 230, 220);
+        jPanel4.setBounds(20, 110, 230, 220);
 
         pnlPairs.setBackground(new java.awt.Color(6, 23, 190));
         pnlPairs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -320,17 +321,17 @@ public class number extends javax.swing.JFrame {
         );
 
         jPanel1.add(pnlPairs);
-        pnlPairs.setBounds(40, 340, 160, 140);
+        pnlPairs.setBounds(40, 380, 160, 140);
 
         jPanel6.setBackground(new java.awt.Color(6, 23, 190));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         jPanel6.setToolTipText("");
         jPanel6.setOpaque(false);
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("?");
+        lblGana.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        lblGana.setForeground(new java.awt.Color(255, 255, 255));
+        lblGana.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblGana.setText("?");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -338,33 +339,43 @@ public class number extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblGana, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblGana, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel6);
-        jPanel6.setBounds(710, 320, 170, 150);
+        jPanel6.setBounds(710, 370, 170, 150);
 
         btnConfigParams.setBackground(new java.awt.Color(164, 10, 198));
         btnConfigParams.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnConfigParams.setForeground(new java.awt.Color(204, 204, 204));
         btnConfigParams.setText("Config params");
+        btnConfigParams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigParamsActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnConfigParams);
-        btnConfigParams.setBounds(360, 160, 210, 30);
+        btnConfigParams.setBounds(360, 210, 210, 30);
 
         btnAbout.setBackground(new java.awt.Color(164, 10, 198));
         btnAbout.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnAbout.setForeground(new java.awt.Color(204, 204, 204));
         btnAbout.setText("About of");
+        btnAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAboutActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAbout);
-        btnAbout.setBounds(360, 120, 210, 30);
+        btnAbout.setBounds(360, 170, 210, 30);
 
         btnTry.setBackground(new java.awt.Color(164, 10, 198));
         btnTry.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -376,7 +387,7 @@ public class number extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnTry);
-        btnTry.setBounds(360, 80, 210, 30);
+        btnTry.setBounds(360, 130, 210, 30);
 
         jLabel9.setBackground(new java.awt.Color(51, 51, 255));
         jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -426,8 +437,7 @@ public class number extends javax.swing.JFrame {
     private void cbxNumPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumPActionPerformed
         // TODO add your handling code here:
         
-        String NumJugadores = null;
-        NumJugadores = NumJugadores+cbxNumP.getSelectedItem().toString();
+       
         
         
         
@@ -440,8 +450,22 @@ public class number extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxLevenActionPerformed
 
     private void btnTryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTryActionPerformed
-         lblD1.setIcon(new ImageIcon(getClass().getResource("images/pregunta.png")));
-         lblD2.setIcon(new ImageIcon(getClass().getResource("images/pregunta.png")));
+        lblD1.setIcon(new ImageIcon(getClass().getResource("images/pregunta.png")));
+        lblD2.setIcon(new ImageIcon(getClass().getResource("images/pregunta.png")));
+        lbl1.setText(" - ");
+        lbl2.setText(" - ");
+        lbl3.setText(" - ");
+        lbl4.setText(" - ");
+        btnTry.setEnabled(false); 
+        btnAbout.setEnabled(false);  
+        btnConfigParams.setEnabled(false);  
+        btnplay.setEnabled(false);
+        pnlZonePlay.setEnabled(false);
+        lblD1.setEnabled(false);
+        lblD2.setEnabled(false);
+        lblPares.setEnabled(false);
+        lblGana.setEnabled(false);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTryActionPerformed
 
@@ -532,7 +556,19 @@ public class number extends javax.swing.JFrame {
             
         }
             
-            
+         if (d1==d2){
+             
+             Pares[i]++;
+             lblPares.setText(String.valueOf(Pares[i]));
+             
+         }else{
+             Pares[i]=0;
+             lblPares.setText(String.valueOf(Pares[i]));
+         }   
+         
+            String NumJugadores = null;
+            NumJugadores = NumJugadores+cbxNumP.getSelectedItem().toString();
+           
                 
             
         
@@ -633,6 +669,21 @@ public class number extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_btnplayActionPerformed
 
+    private void btnConfigParamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigParamsActionPerformed
+        // TODO add your handling code here:
+        String NumJugadores = null;
+        NumJugadores = NumJugadores+cbxNumP.getSelectedItem().toString();
+        
+         
+    }//GEN-LAST:event_btnConfigParamsActionPerformed
+
+    private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "***REGLAS DEL JUEGO***\n EN EL JUEGO SE PERMITIRAN JUGADORES  DE 1 A 3.\n"
+                + " ELIJA SU NIVEL DE DIFICULTAD QUE SEA DESEADO. PARA REINICIAR EL JUEGO PRECIONE EL BOTOON *TRY AGIAN*\n"
+                + " PRECIONA EL BOTTON PLAY PARA TIRAR LOS DADOS Y DISFRUTA DEl JUEGO *** BUENA SUERTE*** " ); 
+    }//GEN-LAST:event_btnAboutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -678,7 +729,6 @@ public class number extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxLeven;
     private javax.swing.JComboBox<String> cbxNumP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -696,6 +746,7 @@ public class number extends javax.swing.JFrame {
     private javax.swing.JLabel lbl4;
     private javax.swing.JLabel lblD1;
     private javax.swing.JLabel lblD2;
+    private javax.swing.JLabel lblGana;
     private javax.swing.JLabel lblPares;
     private javax.swing.JPanel pnlConfigZone;
     private javax.swing.JPanel pnlPairs;
