@@ -1,5 +1,8 @@
 package practicas;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -145,11 +148,25 @@ public class Calcv2 extends javax.swing.JFrame {
 
     private void btncalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncalcActionPerformed
         // TODO add your handling code here:
-        int num1=0, num2=0,ans;
+        
+        ///// formas de llamar un item entero o de cadena 
         
         //num1 = txtN1.getText();
-        ans = num1 + num2;
-        System.out.println("su resultado es:"+ans);
+        
+//        int num1=0, num2=0,ans;
+//        int lim = cbmOp.getSelectedIndex();
+//        
+//        lblRes.setText(Integer.toString(lim));
+        
+        String operadores;
+        
+        operadores = cbmOp.getSelectedItem().toString();
+        lblRes.setText(operadores);
+        
+        
+        
+        
+        
         
         
     }//GEN-LAST:event_btncalcActionPerformed
@@ -158,6 +175,31 @@ public class Calcv2 extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+//        int x=0;
+//        Scanner q = new Scanner(System.in);
+//        int nu[]= new int [2];
+//        Random D = new Random();
+//        int d1 = D.nextInt(6);
+//        System.out.println(d1);
+//        
+//         int d2;
+//        nu[0]= 1;
+//        nu[1]= 2;
+//
+//        
+//        
+//        for (x=0;x<nu.length;x++){
+//            System.out.println("play - palayer "+"["+ nu[x]+"]");
+//        
+//  
+//            for (int i=1;i<=1;i++){
+//                System.out.println("tira dados  " ); 
+//        
+//           }
+//        }       
+            
+        
+            
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -5,15 +5,49 @@
  */
 package practicas;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author JOHAN
  */
 public class Products {
     
+    
+    public static void main(String[] args){
+     int x=0;
+        Scanner q = new Scanner(System.in);
+        int nu[]= new int [1];
+        int j2[]= new int [1];
+        Random D = new Random();
+        int d1 = D.nextInt(7);
+        int d2 = D.nextInt(7);
+        
+        
+        nu[0] = 1;
+        j2[0] = 2;
+        
+        
+        for (x=0;x<nu.length;x++){
+                
+                
+            System.out.println("play - palayer "+"["+ nu[x]+"]");
+        
+            
+            for (int i=1;i<=1;i++){
+                System.out.println("tira dados  " + d1 + "---" + d2); 
+                
+           }
+            if (x<nu.length){
+              System.out.println("play - palayer "+"["+ j2[x]+"]");  
+            }
+        }       
+    }  
 
     public Products() {
         
-    }
+    
+   }
     
 }

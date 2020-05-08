@@ -18,13 +18,7 @@ public class number extends javax.swing.JFrame {
     Random D = new Random();  
     Scanner pro;
     
-    int vec = 0;
-    int vector[] = new int[1000];
-    int choke[] = new int[1000];
-    int Pares[] = new int [1000];
-    int vic=0;
-    int ganador=0;
-    int i = 0;
+    
     /**
      * Creates new form NumberRace
      */
@@ -171,7 +165,7 @@ public class number extends javax.swing.JFrame {
 
         cbxNumP.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbxNumP.setForeground(new java.awt.Color(204, 204, 204));
-        cbxNumP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> 1", "-> 2", "-> 3" }));
+        cbxNumP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> 1", "-> 2", "-> 3", " " }));
         cbxNumP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxNumPActionPerformed(evt);
@@ -186,11 +180,10 @@ public class number extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(pnlConfigZoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cbxLeven, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel4)
-                        .addComponent(cbxNumP, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(cbxLeven, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cbxNumP, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlConfigZoneLayout.setVerticalGroup(
@@ -395,7 +388,7 @@ public class number extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/l.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(0, 4, 950, 550);
+        jLabel9.setBounds(0, 4, 930, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -430,14 +423,12 @@ public class number extends javax.swing.JFrame {
         btnplay.setText("Play - Player 1");
         
         
+        
             
         
     }//GEN-LAST:event_btnStartActionPerformed
 
     private void cbxNumPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNumPActionPerformed
-        // TODO add your handling code here:
-        
-       
         
         
         
@@ -466,108 +457,150 @@ public class number extends javax.swing.JFrame {
         lblPares.setEnabled(false);
         lblGana.setEnabled(false);
         
+//         int x=0;
+//        Scanner q = new Scanner(System.in);
+//        int nu[]= new int [1];
+//        int j2[]= new int [1];
+//        Random D = new Random();
+//        int d1 = D.nextInt(7);
+//        int d2 = D.nextInt(7);
+//        
+//        
+//        nu[0] = 1;
+//        j2[0] = 2;
+//        
+//        
+//        for (x=0;x<nu.length;x++){
+//                
+//                
+//            System.out.println("play - palayer "+"["+ nu[x]+"]");
+//        
+//            
+//            for (int i=1;i<=1;i++){
+//                System.out.println("tira dados  " + d1 + "---" + d2); 
+//                
+//           }
+//            if (x<nu.length){
+//              System.out.println("play - palayer "+"["+ j2[x]+"]");  
+//            }
+//        }       
+//    }  
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTryActionPerformed
 
     private void btnplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplayActionPerformed
-        // TODO add your handling code here:
-//        int n=0;
-//        n = Integer.parseInt(cbxNumP.getSelectedItem().toString());
-//        String lev = cbxLeven.getSelectedItem().toString();
-//        
-//        int op = 0;
-//        switch (op){
-//            case 1:
-//            "Basic".equals(lev);
-//            break;
-//            case 2:
-//            "Intermediate".equals(lev);
-//            break;
-//            case 3:
-//            "Advance".equals(lev);
-//            break;
-//        }
         
-        
-        
+        System.out.print("play - player 2");
         Random D = new Random();
            int d1 = 0, d2 = 0;
 
         d1 = (int)(D.nextDouble()* 6 + 1);
         d2 = (int)(D.nextDouble()* 6 + 1);
-        int res;
-        res = d1+d2;
-
-//        lbl1.setText(Integer.toString(d1));
-        if (res==2){
-            res = 21;
-        }
-        lbl2.setText(Integer.toString(res));
         
+        int res = 0;
         
-        switch (d1){
-            case 1:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
-            break;
-            case 2:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
-            break;
-            case 3:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
-            break;
-            case 4:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
-            break;
-            case 5:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
-            break;
-            case 6:
-            lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png"))); 
-            break;
-            default:
-
-            break;
-
-        }
-
-        switch (d2){
-
-            case 1:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
-            break;
-            case 2:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
-            break;
-            case 3:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
-            break;
-            case 4:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
-            break;
-            case 5:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
-            break;
-            case 6:
-            lblD2.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
-            break;
-            default:
-
-            break;
+            res = (d1+d2);
+            lbl2.setText(Integer.toString(res));
+            if (res==2){
+                res = 21;   
+                lbl2.setText(Integer.toString(res));
+            }
             
-        }
+             int vec[] = new int [100];
+             
+             
+             lbl3.setText(Integer.toString(res));
+             
+             int j=0;
+             int pares[] = new int [10];
+        
+//            
+//            int jugador1[] = new int[500];
+//            for (i=0;i<4;i++){
+//                
+//                btnplay.setText("Play - Player " + i);
+//            }
+                
+            switch (d1){               
+                case 1:
+                lblD1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
+                break;
+                case 2:
+                lblD1.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
+                break;
+                case 3:
+                lblD1.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
+                break;
+                case 4:
+                lblD1.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
+                break;
+                case 5:
+                lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
+                break;
+                case 6:
+                lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png"))); 
+                break;
+                default:
+
+                break;
+
+            }
+
+            switch (d2){
+
+                case 1:
+                lblD2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
+                break;
+                case 2:
+                lblD2.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
+                break;
+                case 3:
+                lblD2.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
+                break;
+                case 4:
+                lblD2.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
+                break;
+                case 5:
+                lblD2.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
+                break;
+                case 6:
+                lblD2.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
+                break;
+                default:
             
-         if (d1==d2){
-             
-             Pares[i]++;
-             lblPares.setText(String.valueOf(Pares[i]));
-             
-         }else{
-             Pares[i]=0;
-             lblPares.setText(String.valueOf(Pares[i]));
-         }   
-         
-            String NumJugadores = null;
-            NumJugadores = NumJugadores+cbxNumP.getSelectedItem().toString();
+                break;
+            
+                }
+            
+                  
+            
+           
+
+
+                
+
+
+
+//                  int da1 = D.nextInt(7);
+//                  int da2 = D.nextInt(7);
+//                
+                
+    
+//                System.out.print("play - player 3");
+            
+//         if (d1==d2){
+//             
+//             Pares[i]++;
+//             lblPares.setText(String.valueOf(Pares[i]));
+//             
+//         }else{
+//             Pares[i]=0;
+//             lblPares.setText(String.valueOf(Pares[i]));
+//         }   
+//         
+//            String NumJugadores = null;
+//            NumJugadores = NumJugadores+cbxNumP.getSelectedItem().toString();
            
                 
             
@@ -680,8 +713,8 @@ public class number extends javax.swing.JFrame {
     private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "***REGLAS DEL JUEGO***\n EN EL JUEGO SE PERMITIRAN JUGADORES  DE 1 A 3.\n"
-                + " ELIJA SU NIVEL DE DIFICULTAD QUE SEA DESEADO. PARA REINICIAR EL JUEGO PRECIONE EL BOTOON *TRY AGIAN*\n"
-                + " PRECIONA EL BOTTON PLAY PARA TIRAR LOS DADOS Y DISFRUTA DEl JUEGO *** BUENA SUERTE*** " ); 
+                + " ELIJA SU NIVEL DE DIFICULTAD QUE SEA DESEADO. PARA REINICIAR EL JUEGO PRECIONE EL BOTON *TRY AGIAN*\n"
+                + " PRECIONA EL BOTTON *PLAY* PARA TIRAR LOS DADOS Y DISFRUTA DEl JUEGO *** BUENA SUERTE*** " ); 
     }//GEN-LAST:event_btnAboutActionPerformed
 
     /**

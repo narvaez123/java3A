@@ -38,7 +38,7 @@ public class vector1 {
         
         for(i=0;i<Names.length;i++){
             
-             System.out.println("Name "+ (i+1)+ (", ") + Names[i]); 
+             System.out.println("Name "+ (i+1) + (", ") + Names[i]); 
         
 
         }
