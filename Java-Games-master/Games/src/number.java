@@ -17,8 +17,9 @@ import javax.swing.JOptionPane;
 public class number extends javax.swing.JFrame {
     Random D = new Random();  
     Scanner pro;
-    
-    
+    int par[] = new int [4],i;
+    int jugador[] = new int [1000],jug,b;
+    int sumd[]= new int [1000],r;
     /**
      * Creates new form NumberRace
      */
@@ -98,8 +99,8 @@ public class number extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 0, 80, 70);
 
-        pnlZonePlay.setBackground(new java.awt.Color(6, 23, 190));
-        pnlZonePlay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        pnlZonePlay.setBackground(new java.awt.Color(255, 255, 255));
+        pnlZonePlay.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Play zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         pnlZonePlay.setOpaque(false);
         pnlZonePlay.setLayout(null);
 
@@ -119,6 +120,7 @@ public class number extends javax.swing.JFrame {
         btnplay.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnplay.setForeground(new java.awt.Color(204, 204, 204));
         btnplay.setText("play  -  player ");
+        btnplay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnplay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnplayActionPerformed(evt);
@@ -131,9 +133,10 @@ public class number extends javax.swing.JFrame {
         pnlZonePlay.setBounds(310, 260, 320, 260);
 
         pnlConfigZone.setBackground(new java.awt.Color(255, 255, 255));
-        pnlConfigZone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        pnlConfigZone.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Score zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         pnlConfigZone.setOpaque(false);
 
+        cbxLeven.setBackground(new java.awt.Color(0, 0, 255));
         cbxLeven.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbxLeven.setForeground(new java.awt.Color(204, 204, 204));
         cbxLeven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> Basic = 50 positions", "-> Intermdiate = 100 positions", "-> Advanced = 200 positions" }));
@@ -147,6 +150,8 @@ public class number extends javax.swing.JFrame {
         btnStart.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnStart.setForeground(new java.awt.Color(204, 204, 204));
         btnStart.setText("Start gamer");
+        btnStart.setBorder(null);
+        btnStart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStartActionPerformed(evt);
@@ -163,6 +168,7 @@ public class number extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Level");
 
+        cbxNumP.setBackground(new java.awt.Color(0, 0, 255));
         cbxNumP.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbxNumP.setForeground(new java.awt.Color(204, 204, 204));
         cbxNumP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> 1", "-> 2", "-> 3", " " }));
@@ -197,16 +203,16 @@ public class number extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxLeven, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel1.add(pnlConfigZone);
-        pnlConfigZone.setBounds(690, 110, 220, 220);
+        pnlConfigZone.setBounds(690, 110, 230, 230);
 
-        jPanel4.setBackground(new java.awt.Color(6, 23, 190));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Score zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setOpaque(false);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -252,7 +258,7 @@ public class number extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lbl2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(lbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -279,14 +285,14 @@ public class number extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(lbl4))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4);
         jPanel4.setBounds(20, 110, 230, 220);
 
-        pnlPairs.setBackground(new java.awt.Color(6, 23, 190));
-        pnlPairs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        pnlPairs.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPairs.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Score zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         pnlPairs.setToolTipText("");
         pnlPairs.setOpaque(false);
 
@@ -302,22 +308,22 @@ public class number extends javax.swing.JFrame {
             pnlPairsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPairsLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                 .addGap(23, 23, 23))
         );
         pnlPairsLayout.setVerticalGroup(
             pnlPairsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPairsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                .addComponent(lblPares, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
                 .addGap(26, 26, 26))
         );
 
         jPanel1.add(pnlPairs);
-        pnlPairs.setBounds(40, 380, 160, 140);
+        pnlPairs.setBounds(20, 370, 230, 150);
 
-        jPanel6.setBackground(new java.awt.Color(6, 23, 190));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Score zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel6.setToolTipText("");
         jPanel6.setOpaque(false);
 
@@ -330,26 +336,24 @@ public class number extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lblGana, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+            .addComponent(lblGana, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(lblGana, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(lblGana, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel6);
-        jPanel6.setBounds(710, 370, 170, 150);
+        jPanel6.setBounds(690, 370, 220, 150);
 
         btnConfigParams.setBackground(new java.awt.Color(164, 10, 198));
         btnConfigParams.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnConfigParams.setForeground(new java.awt.Color(204, 204, 204));
         btnConfigParams.setText("Config params");
+        btnConfigParams.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnConfigParams.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfigParamsActionPerformed(evt);
@@ -362,6 +366,7 @@ public class number extends javax.swing.JFrame {
         btnAbout.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnAbout.setForeground(new java.awt.Color(204, 204, 204));
         btnAbout.setText("About of");
+        btnAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAboutActionPerformed(evt);
@@ -374,6 +379,7 @@ public class number extends javax.swing.JFrame {
         btnTry.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnTry.setForeground(new java.awt.Color(204, 204, 204));
         btnTry.setText("Try Again");
+        btnTry.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTryActionPerformed(evt);
@@ -447,6 +453,8 @@ public class number extends javax.swing.JFrame {
         lbl2.setText(" - ");
         lbl3.setText(" - ");
         lbl4.setText(" - ");
+        lblPares.setText("0");
+        btnplay.setText("Play - Playing");
         btnTry.setEnabled(false); 
         btnAbout.setEnabled(false);  
         btnConfigParams.setEnabled(false);  
@@ -457,41 +465,14 @@ public class number extends javax.swing.JFrame {
         lblPares.setEnabled(false);
         lblGana.setEnabled(false);
         
-//         int x=0;
-//        Scanner q = new Scanner(System.in);
-//        int nu[]= new int [1];
-//        int j2[]= new int [1];
-//        Random D = new Random();
-//        int d1 = D.nextInt(7);
-//        int d2 = D.nextInt(7);
-//        
-//        
-//        nu[0] = 1;
-//        j2[0] = 2;
-//        
-//        
-//        for (x=0;x<nu.length;x++){
-//                
-//                
-//            System.out.println("play - palayer "+"["+ nu[x]+"]");
-//        
-//            
-//            for (int i=1;i<=1;i++){
-//                System.out.println("tira dados  " + d1 + "---" + d2); 
-//                
-//           }
-//            if (x<nu.length){
-//              System.out.println("play - palayer "+"["+ j2[x]+"]");  
-//            }
-//        }       
-//    }  
+  
         
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTryActionPerformed
 
     private void btnplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplayActionPerformed
         
-        System.out.print("play - player 2");
+        
         Random D = new Random();
            int d1 = 0, d2 = 0;
 
@@ -507,20 +488,28 @@ public class number extends javax.swing.JFrame {
                 lbl2.setText(Integer.toString(res));
             }
             
-             int vec[] = new int [100];
              
-             
-             lbl3.setText(Integer.toString(res));
-             
-             int j=0;
-             int pares[] = new int [10];
-        
-//            
-//            int jugador1[] = new int[500];
-//            for (i=0;i<4;i++){
-//                
-//                btnplay.setText("Play - Player " + i);
-//            }
+                int j=0;
+                b = cbxNumP.getSelectedIndex();
+                lbl1.setText(Integer.toString(b));
+                
+                    
+                b = cbxNumP.getSelectedIndex();
+                lbl1.setText(Integer.toString(b+1));
+                for(jugador[jug]=0;jugador[jug]<=b;){
+                    jugador[jug]++;
+                        btnplay.setText("Play - Player " + jugador[jug]);            
+                                if (jugador[jug]==1){
+                                    res = d1+d2;
+                                    
+                                    lbl2.setText(Integer.toString(sumd[r+res]));
+                                }
+                }                    
+//                 if (jugador[jug]<=b){
+////                                
+////                                jugador[jug]=0;
+////                                btnplay.setText("Play - Player " + jugador[jug]);  
+////                            }   
                 
             switch (d1){               
                 case 1:
@@ -570,10 +559,25 @@ public class number extends javax.swing.JFrame {
                 default:
             
                 break;
-            
+                
+               
                 }
-            
+                
+                
+                
+                 
+                  if (d1==d2){
+                      par[i]++;
+                      lblPares.setText(Integer.toString(par[i]));
+                    }else
+                      par[i]=0;{
+                      lblPares.setText(Integer.toString(par[i]));
+                    }     
+                    if (par[i]==3){
+                        lblGana.setText("YOU WIN");   
+                    }
                   
+                
             
            
 
@@ -712,9 +716,10 @@ public class number extends javax.swing.JFrame {
 
     private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "***REGLAS DEL JUEGO***\n EN EL JUEGO SE PERMITIRAN JUGADORES  DE 1 A 3.\n"
-                + " ELIJA SU NIVEL DE DIFICULTAD QUE SEA DESEADO. PARA REINICIAR EL JUEGO PRECIONE EL BOTON *TRY AGIAN*\n"
-                + " PRECIONA EL BOTTON *PLAY* PARA TIRAR LOS DADOS Y DISFRUTA DEl JUEGO *** BUENA SUERTE*** " ); 
+        JOptionPane.showMessageDialog(null, "***REGLAS DEL JUEGO***\n EN EL JUEGO SE PERMITIRAN JUGADORES  DE 1 A 3."
+                + "ELIJA SU NIVEL\nDE DIFICULTAD QUE SEA DESEADO. PRECIONA EL BOTTON *START* PARA INICIAR EL JUEGO\n"
+                + "PRECIONA EL BOTTON *PLAY* PARA TIRAR LOS DADOS. SI UN JUGADOR TIENE TRES\n PARES CONSECUTIVOS GANA "
+                + "LA PARTIDA (***YOU WIN*** ). SI QUIERE REINICIAR EL JUEGO PRECIONE\n EL BOTON *TRY AGIAN*.\n DISFRUTA DEl JUEGO *** BUENA SUERTE*** " ); 
     }//GEN-LAST:event_btnAboutActionPerformed
 
     /**
