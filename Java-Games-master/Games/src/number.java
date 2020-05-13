@@ -17,9 +17,10 @@ import javax.swing.JOptionPane;
 public class number extends javax.swing.JFrame {
     Random D = new Random();  
     Scanner pro;
-    int par[] = new int [4],i;
-    int jugador[] = new int [1000],jug,b;
+    int par[] = new int [4],i=1;
+    int vectores[] = new int [1000],jug,b;
     int sumd[]= new int [1000],r;
+    int Njugadores=0,lev=1,ga=0,gan,res,d1,d2;
     /**
      * Creates new form NumberRace
      */
@@ -139,7 +140,7 @@ public class number extends javax.swing.JFrame {
         cbxLeven.setBackground(new java.awt.Color(0, 0, 255));
         cbxLeven.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         cbxLeven.setForeground(new java.awt.Color(204, 204, 204));
-        cbxLeven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-> Basic = 50 positions", "-> Intermdiate = 100 positions", "-> Advanced = 200 positions" }));
+        cbxLeven.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " Basic ", " Intermediate ", " Advanced " }));
         cbxLeven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxLevenActionPerformed(evt);
@@ -472,101 +473,213 @@ public class number extends javax.swing.JFrame {
 
     private void btnplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnplayActionPerformed
         
-        
-        Random D = new Random();
-           int d1 = 0, d2 = 0;
-
-        d1 = (int)(D.nextDouble()* 6 + 1);
-        d2 = (int)(D.nextDouble()* 6 + 1);
-        
-        int res = 0;
-        
-            res = (d1+d2);
-            lbl2.setText(Integer.toString(res));
-            if (res==2){
-                res = 21;   
-                lbl2.setText(Integer.toString(res));
-            }
+//            int res = 0;
+//        
+//                        res = (d1+d2);
+//                        lbl2.setText(Integer.toString(res));
+//                        if (res==2){
+//                            res = 21;   
+//                            lbl2.setText(Integer.toString(res));
+//                        }
+//        
             
-             
-                int j=0;
-                b = cbxNumP.getSelectedIndex();
-                lbl1.setText(Integer.toString(b));
+//            Njugadores = Integer.parseInt(cbxNumP.getSelectedItem().toString());
+            String nivel = cbxLeven.getSelectedItem().toString();
                 
+//            if (nivel.equals("Basic")){
+//                lev=1;
+//            }
+//             if (nivel.equals("Intermediate")){
+//                lev=2;
+//            }
+//              if (nivel.equals("Advanced")){
+//                lev=3;
+//            }
+                
+                if(lev==1){
                     
-                b = cbxNumP.getSelectedIndex();
-                lbl1.setText(Integer.toString(b+1));
-                for(jugador[jug]=0;jugador[jug]<=b;){
-                    jugador[jug]++;
-                        btnplay.setText("Play - Player " + jugador[jug]);            
-                                if (jugador[jug]==1){
-                                    res = d1+d2;
-                                    
-                                    lbl2.setText(Integer.toString(sumd[r+res]));
-                                }
-                }                    
-//                 if (jugador[jug]<=b){
-////                                
-////                                jugador[jug]=0;
-////                                btnplay.setText("Play - Player " + jugador[jug]);  
-////                            }   
-                
-            switch (d1){               
-                case 1:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
-                break;
-                case 2:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
-                break;
-                case 3:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
-                break;
-                case 4:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
-                break;
-                case 5:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
-                break;
-                case 6:
-                lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png"))); 
-                break;
-                default:
+                    
+           
+                    if (ga<50){
+                        
+                        System.out.println("posicion del jugador ("+i+")= "+ vectores[i]);
+                        
+                        if(vectores[i]<50){
+                            btnplay.setText("Play - Player "+i);
+                            lbl1.setText(String.valueOf(i));
+                            
+                        
 
-                break;
+                            
 
-            }
 
-            switch (d2){
+                            d1 =  D.nextInt(7);
+                            
+                            System.out.println("dado1  "+ d1);
+                            
+                         switch (d1){               
+                             case 1:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
+                             break;
+                             case 2:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
+                             break;
+                             case 3:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
+                             break;
+                             case 4:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
+                             break;
+                             case 5:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
+                             break;
+                             case 6:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png"))); 
+                             break;
+                             default:
 
-                case 1:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
-                break;
-                case 2:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
-                break;
-                case 3:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
-                break;
-                case 4:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
-                break;
-                case 5:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
-                break;
-                case 6:
-                lblD2.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
-                break;
-                default:
-            
-                break;
-                
-               
-                }
-                
-                
-                
-                 
-                  if (d1==d2){
+                             break;
+
+                         }//cierre de switch dado1
+                            d2 =  D.nextInt(7);
+                            System.out.println("dado2  "+ d2);
+                            
+                         switch (d2){
+
+                             case 1:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
+                             break;
+                             case 2:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
+                             break;
+                             case 3:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
+                             break;
+                             case 4:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
+                             break;
+                             case 5:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
+                             break;
+                             case 6:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
+                             break;
+                             default:
+
+                             break;
+
+
+                             }//cierre de switch dado2
+                                res = d1 + d2;
+                                vectores[i]= res + vectores[i]; 
+                                lbl2.setText(String.valueOf(vectores[i]));
+                             if (vectores[i]>50){
+                                 vectores[i]=vectores[i]-d1;
+                                 System.out.println("el numero se pasas del limite ");
+                            
+                             }
+                             if(vectores[i]==50){
+                                 ga=50;
+                                 gan=1;
+                                 
+                             }
+                        }    
+                    }        
+                }         
+                           
+                if(lev==2){
+                    
+                    
+           
+                    if (ga<100){
+                        
+                        System.out.println("posicion del jugador ("+i+")= "+ vectores[i]);
+                        
+                        if(vectores[i]<100){
+                            btnplay.setText("Play - Player "+i);
+                            lbl1.setText(String.valueOf(i));
+                            
+                        
+
+                            
+
+
+                            d1 =  D.nextInt(7);
+                            
+                            System.out.println("dado1  "+ d1);
+                            
+                         switch (d1){               
+                             case 1:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
+                             break;
+                             case 2:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
+                             break;
+                             case 3:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
+                             break;
+                             case 4:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
+                             break;
+                             case 5:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
+                             break;
+                             case 6:
+                             lblD1.setIcon(new ImageIcon(getClass().getResource("images/6.png"))); 
+                             break;
+                             default:
+
+                             break;
+
+                         }//cierre de switch dado1
+                            d2 =  D.nextInt(7);
+                            System.out.println("dado2  "+ d2);
+                            
+                         switch (d2){
+
+                             case 1:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/1.png")));
+                             break;
+                             case 2:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/2.png")));
+                             break;
+                             case 3:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/3.png")));
+                             break;
+                             case 4:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/4.png")));
+                             break;
+                             case 5:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/5.png")));
+                             break;
+                             case 6:
+                             lblD2.setIcon(new ImageIcon(getClass().getResource("images/6.png")));
+                             break;
+                             default:
+
+                             break;
+
+
+                             }//cierre de switch dado2
+                                res = d1 + d2;
+                                vectores[i]= res + vectores[i]; 
+                                lbl2.setText(String.valueOf(vectores[i]));
+                             if (vectores[i]>100){
+                                 vectores[i]=vectores[i]-d1;
+                                 System.out.println("el numero se pasas del limite ");
+                            
+                             }
+                             if(vectores[i]==100){
+                                 ga=100;
+                                 gan=1;
+                                 
+                             }
+                        }    
+                    }        
+                }             
+                       
+                     
+                if (d1==d2){
                       par[i]++;
                       lblPares.setText(Integer.toString(par[i]));
                     }else
@@ -576,6 +689,18 @@ public class number extends javax.swing.JFrame {
                     if (par[i]==3){
                         lblGana.setText("YOU WIN");   
                     }
+                                
+                        
+                        
+                    
+                    
+            
+                 
+                       
+                
+                    
+                 
+                  
                   
                 
             
