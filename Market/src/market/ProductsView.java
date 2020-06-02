@@ -6,6 +6,7 @@
 package market;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,9 +36,9 @@ public class ProductsView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtCode = new javax.swing.JTextField();
+        txtProductCode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
+        txtProductName = new javax.swing.JTextField();
         txtProductQ = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtProductPrice = new javax.swing.JTextField();
@@ -82,8 +83,8 @@ public class ProductsView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCode)
-                    .addComponent(txtName)
+                    .addComponent(txtProductCode)
+                    .addComponent(txtProductName)
                     .addComponent(txtProductQ)
                     .addComponent(txtProductPrice)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -102,11 +103,11 @@ public class ProductsView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtProductCode, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtProductName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -176,26 +177,46 @@ public class ProductsView extends javax.swing.JFrame {
     private void btnAddProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProductActionPerformed
         // TODO add your handling code here:
         
-        Product product = new Product (
-                txtName.getText(),
-                Integer.parseInt(txtCode.getText()),
-                Integer.parseInt(txtProductQ.getText()),
-                Float.parseFloat(txtProductPrice.getText())
-        );
-        
-        product_list.add(product);
-        
-        showData();
-        
-        txtCode.setText("");
-        txtName.setText("");
-        txtProductQ.setText("");
-        txtProductPrice.setText("");
+        if (txtProductCode.getText().isEmpty() == true ||
+                txtProductName.getText().toString() == "" ||
+                txtProductQ.getText().isEmpty() == true || 
+                txtProductPrice.getText().isEmpty() == true){
+            JOptionPane.showMessageDialog(null,"::: There are some empty fields :::");
+        } else {
+            if(status()){
+                JOptionPane.showMessageDialog(null,"::: The product already exists :::");
+            } else {      
+                Product product = new Product (
+                        txtProductName.getText(),
+                        Integer.parseInt(txtProductCode.getText()),
+                        Integer.parseInt(txtProductQ.getText()),
+                        Float.parseFloat(txtProductPrice.getText())
+                );
+
+                product_list.add(product);
+
+                JOptionPane.showMessageDialog(null,"::: The product has been registered :::");
+
+                showData();
+                clearForm();
+            }
+        }
         
         //System.out.println("Object product: " + product_list);
         //System.out.println("Object product 0: " + product_list.get(0));
     }//GEN-LAST:event_btnAddProductActionPerformed
 
+    public boolean status(){
+        boolean x = false; 
+        for (int i=0; i<product_list.size(); i++){
+            if(product_list.get(i).getCode() == Integer.parseInt(txtProductCode.getText())){
+                x=true;
+                break;
+            }
+        }
+        return x;
+    }
+    
     public void showData(){
         String matris_products[][] = new String[product_list.size()][4];
         
@@ -220,6 +241,13 @@ public class ProductsView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+    }
+    
+    public void clearForm(){
+        txtProductName.setText(null);
+        txtProductCode.setText(null);
+        txtProductQ.setText(null);
+        txtProductPrice.setText(null);
     }
     /**
      * @param args the command line arguments
@@ -266,8 +294,8 @@ public class ProductsView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableProducts;
-    private javax.swing.JTextField txtCode;
-    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtProductCode;
+    private javax.swing.JTextField txtProductName;
     private javax.swing.JTextField txtProductPrice;
     private javax.swing.JTextField txtProductQ;
     // End of variables declaration//GEN-END:variables
